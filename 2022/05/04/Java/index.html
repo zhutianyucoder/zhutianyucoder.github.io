@@ -9,8 +9,10 @@
 概念： final关键字代表最终的、不可改变的
 
 四种常见方法：用于修饰类、用于修饰成员方法、用于修饰局部变量、用于修饰成员变量
+
+
 a. 修饰类
-​    格式：public final class 类名称{   /">
+ 格式：public final class 类名称{   // ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -477,7 +479,7 @@ a. 修饰类
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    187
+                    403
                 </div>
                 
 
@@ -504,20 +506,32 @@ a. 修饰类
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、-final关键字"><a href="#一、-final关键字" class="headerlink" title="一、__final关键字"></a>一、__final关键字</h2><ol>
+                <h2 id="一、-final关键字"><a href="#一、-final关键字" class="headerlink" title="一、__final关键字"></a>一、__final关键字</h2><ul>
 <li><p>概念： final关键字代表最终的、不可改变的</p>
 </li>
 <li><p>四种常见方法：用于修饰类、用于修饰成员方法、用于修饰局部变量、用于修饰成员变量</p>
-<p>a. 修饰类</p>
-<p>​    格式：public final class 类名称{   // ….. }</p>
-<p>​	含义：当前这个类不能有任何的子类。</p>
-<p>​	注：一个类如果是final，那么其中所有的成员方法都无法进行覆盖重写</p>
-<p>b. 修饰成员方法</p>
 </li>
-</ol>
-<p>​			当final关键字修饰方法时，这个方法是最终方法，不能被覆盖重写。</p>
-<p>​			格式：修饰符 final 返回值类型 方法名称(参数列表){   //方法体  }</p>
-<p>​			注：对类、方法来说，abstract关键字和final关键字不能同事使用。</p>
+</ul>
+<p>a. 修饰类</p>
+<p> 格式：public final class 类名称{   // ….. }</p>
+<p> 含义：当前这个类不能有任何的子类。</p>
+<p> 注：一个类如果是final，那么其中所有的成员方法都无法进行覆盖重写</p>
+<p>b. 修饰成员方法</p>
+<p>​		当final关键字修饰方法时，这个方法是最终方法，不能被覆盖重写。</p>
+<p>​		格式：修饰符 final 返回值类型 方法名称(参数列表){   //方法体  }</p>
+<p>​		注：对类、方法来说，abstract关键字和final关键字不能同时使用。</p>
+<p>​		c. 修饰局部变量</p>
+<p>​		 一旦使用final来修饰成员变量，那么这个变量就不能进行更改</p>
+<p>​		 注：对于基本类型来说，不可变说的是变量当中的数据不可改变</p>
+<p>​				对于应用类型来说，不可变说的是变量当中的地址值不可改变</p>
+<p>​		d. 修饰成员变量</p>
+<p>​		 对于成员变量来说，如果用final关键字修饰，那么这个变量也不可变</p>
+<p>​		 由于成员变量具有默认值，所有用了final后必须手动赋值，不会给默认值</p>
+<p>​		 对于final的成员变量，要么使用直接赋值，要么通过构造方法赋值</p>
+<p>​		 必须保证类当中所有的构造方法，都最终会对final的成员变量进行赋值</p>
+<h2 id="二、四种权限修饰符"><a href="#二、四种权限修饰符" class="headerlink" title="二、四种权限修饰符"></a>二、四种权限修饰符</h2><p>1.<br>2. </p>
+<h2 id="三、内部类"><a href="#三、内部类" class="headerlink" title="三、内部类"></a>三、内部类</h2><p>* </p>
+<p>* </p>
 
                 
             </div>
@@ -1031,18 +1045,17 @@ a. 修饰类
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/05/04/Java/">
+                <a href="/2022/05/04/Hello/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Java">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Hello">
                         
-                        <span class="card-title">Java</span>
+                        <span class="card-title">Hello</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1052,9 +1065,9 @@ a. 修饰类
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-04
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-04
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1063,20 +1076,11 @@ a. 修饰类
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/final/">
-                        <span class="chip bg-color">final</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%9D%83%E9%99%90/">
-                        <span class="chip bg-color">权限</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%86%85%E9%83%A8%E7%B1%BB/">
-                        <span class="chip bg-color">内部类</span>
+                    <a href="/tags/Hello/">
+                        <span class="chip bg-color">Hello</span>
                     </a>
                     
                 </div>
@@ -1312,7 +1316,7 @@ a. 修饰类
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">229</span>
+                        class="white-color">834</span>
             
             
             
@@ -1392,7 +1396,7 @@ a. 修饰类
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/zhutianyucoder" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
