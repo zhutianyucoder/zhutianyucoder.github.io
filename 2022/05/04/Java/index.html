@@ -538,14 +538,23 @@ a. 修饰类
 <ol>
 <li><p>成员内部类</p>
 <ul>
-<li>定义格式：</li>
+<li><p>定义格式：</p>
+<pre><code>     ~~~java
+     /*修饰符  class 外部类名称 {
+     
+                        修饰符  class  内部类名称 {
+     
+                            //.....
+     
+                        }
+                  //......
+     
+               }
+     */
+     ~~~
+</code></pre>
+</li>
 </ul>
-<p>​           修饰符  class 外部类名称 {</p>
-<p>​		           修饰符  class  内部类名称 {</p>
-<p>​                        //…..</p>
-<p>​                   }</p>
-<p>​              //……</p>
-<p>​           }</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">May05</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">//成员外部类</span>
     <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">May0505</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//成员内部类</span>
         <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -577,13 +586,21 @@ a. 修饰类
 <p>“局部”：只有当前所属的放发才能使用它，出了这个方法外面就不能使用了。</p>
 <ul>
 <li><p>定义格式：</p>
-<p>修饰符  class  外部类名称  {</p>
-<p>​        修饰符  返回值类型  外部类方法名称（参数列表）{</p>
-<p>​				class  局部内部类名称{</p>
-<p>​						//……</p>
-<p>​				}</p>
-<p>​		}</p>
-<p>}</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*修饰符  class  外部类名称  {
+
+         修饰符  返回值类型  外部类方法名称（参数列表）{
+
+                class  局部内部类名称{
+
+                        //......
+
+                }
+
+        }
+
+}
+*/</span>
+</code></pre>
 <p>注：<strong>局部内部类  class前不能有修饰符</strong></p>
 </li>
 </ul>
@@ -651,6 +668,11 @@ a. 修饰类
 </ul>
 </li>
 </ol>
+<ul>
+<li>类作为成员变量类型</li>
+<li>接口作为成员变量类型</li>
+<li>接口作为方法的参数和或返回值</li>
+</ul>
 </li>
 </ul>
 
@@ -1437,7 +1459,7 @@ a. 修饰类
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">1.6k</span>
+                        class="white-color">1.7k</span>
             
             
             
