@@ -472,21 +472,21 @@ a. 修饰类
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-04
+                    2022-05-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    403
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -529,9 +529,130 @@ a. 修饰类
 <p>​		 由于成员变量具有默认值，所有用了final后必须手动赋值，不会给默认值</p>
 <p>​		 对于final的成员变量，要么使用直接赋值，要么通过构造方法赋值</p>
 <p>​		 必须保证类当中所有的构造方法，都最终会对final的成员变量进行赋值</p>
-<h2 id="二、四种权限修饰符"><a href="#二、四种权限修饰符" class="headerlink" title="二、四种权限修饰符"></a>二、四种权限修饰符</h2><p>1.<br>2. </p>
-<h2 id="三、内部类"><a href="#三、内部类" class="headerlink" title="三、内部类"></a>三、内部类</h2><p>* </p>
-<p>* </p>
+<h2 id="二、四种权限修饰符"><a href="#二、四种权限修饰符" class="headerlink" title="二、四种权限修饰符"></a>二、四种权限修饰符</h2><ul>
+<li>public    &gt;    protected    &gt;     (default)      &gt;        private</li>
+</ul>
+<h2 id="三、内部类"><a href="#三、内部类" class="headerlink" title="三、内部类"></a>三、内部类</h2><ul>
+<li><p>如果一个事物的内部包含另一个事物，那么这就是一个类内部包含了另一个类。</p>
+<p>分类：</p>
+<ol>
+<li><p>成员内部类</p>
+<ul>
+<li>定义格式：</li>
+</ul>
+<p>​           修饰符  class 外部类名称 {</p>
+<p>​		           修饰符  class  内部类名称 {</p>
+<p>​                        //…..</p>
+<p>​                   }</p>
+<p>​              //……</p>
+<p>​           }</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">May05</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">//成员外部类</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">May0505</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//成员内部类</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"这是成员内部类的方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"这是成员外部类的方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li><p>使用成员内部类</p>
+<ol>
+<li><p>间接方式：在外部类的方法中，使用内部类，然后main只是调用外部类的方法</p>
+</li>
+<li><p>直接方式：</p>
+<p>外部类名称.内部类名称   对象名 = new 外部类名称().内部类名称();</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>局部内部类（包含匿名内部类）</p>
+<p>定义在一个方法内部的类，那么这就是一个局部内部类</p>
+<p>如果希望访问所在方法的局部变量，那么这个局部变量必须是有效final的</p>
+<p>注：从java 8+开始，只要局部变量值不变，可省略final关键字</p>
+<p>“局部”：只有当前所属的放发才能使用它，出了这个方法外面就不能使用了。</p>
+<ul>
+<li><p>定义格式：</p>
+<p>修饰符  class  外部类名称  {</p>
+<p>​        修饰符  返回值类型  外部类方法名称（参数列表）{</p>
+<p>​				class  局部内部类名称{</p>
+<p>​						//……</p>
+<p>​				}</p>
+<p>​		}</p>
+<p>}</p>
+<p>注：<strong>局部内部类  class前不能有修饰符</strong></p>
+</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">May05</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">//成员外部类</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">May0505</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//成员内部类</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"这是成员内部类的方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//方法</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"这是成员外部类的方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">final</span> <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">10</span> <span class="token punctuation">;</span><span class="token comment" spellcheck="true">//局部变量值不变，可省略final关键字</span>
+        <span class="token keyword">class</span> <span class="token class-name">Inner</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//局部内部类  class前不能有修饰符</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">methodInner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"这是局部内部类的方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        Inner in <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        in<span class="token punctuation">.</span><span class="token function">methodInner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>3.<strong>匿名内部类</strong> </p>
+<p>如果接口的实现类（或者是父类的子类）只需要使用唯一的一次，那么可省略掉该类的定义，而改为使用<em><strong>匿名内部类</strong></em>。</p>
+<ul>
+<li><p>定义格式</p>
+<p>接口名称  对象名 = new 接口名称（）{</p>
+<p>​		//覆盖重写所有抽象方法</p>
+<p>}；//  <strong>;</strong> 别丢下</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DemoMay05</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        May05Interface obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">May05Interface</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">//使用匿名内部类   May05Interface接口名称</span>
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">mayInterface</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"匿名内部类实现的方法1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token annotation punctuation">@Override</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"匿名内部类实现的方法2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        obj<span class="token punctuation">.</span><span class="token function">mayInterface</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        obj<span class="token punctuation">.</span><span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>解析“new 接口名称（）{……}”</p>
+<ol>
+<li><p>new 代表创建对象的动作</p>
+</li>
+<li><p>接口名称就是匿名内部类需要实现哪个接口</p>
+</li>
+<li><p>{…..}匿名对象的内容</p>
+</li>
+</ol>
+<p>注意的问题：</p>
+<ol>
+<li>匿名内部类，在<em><strong>创建对象</strong></em>的时候，只能使用一次。如果希望多次创建对象，而且类的内容一样的话，那么就必须使用单独定义的实现类了。</li>
+<li>匿名对象，在<strong>调用方法</strong>的时候，只能调用唯一一次。如果希望同一对象，调用多次方法，那么必须给对象起个名字。</li>
+<li>匿名内部类是省略了<strong>实现类/子类</strong>，但匿名对象是省略了<strong>对象名称</strong></li>
+<li>匿名内部类和匿名对象不是一回事！！！</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
 
                 
             </div>
@@ -1316,7 +1437,7 @@ a. 修饰类
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">1.2k</span>
+                        class="white-color">1.6k</span>
             
             
             
